@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema({
   id: {
@@ -11,25 +11,29 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     require: true,
     trim: true,
-    maxlength: [50, 'brand must be less than 50 characters'],
+    maxlength: [50, "brand must be less than 50 characters"],
   },
   category: {
     type: String,
     require: true,
     trim: true,
-    maxlength: [50, 'category must be less than 50 characters'],
+    maxlength: [50, "category must be less than 50 characters"],
   },
   name: {
     type: String,
     require: true,
     trim: true,
-    maxlength: [50, 'Name must be less than 50 characters'],
+    maxlength: [50, "Name must be less than 50 characters"],
   },
   img_path: String,
   price: {
     type: Number,
     default: 0,
   },
+  quantity: {
+    type: Number,
+    default: 1,
+  },
 });
 
-module.exports = mongoose.model('Product', ProductSchema);
+module.exports = mongoose.model("Product", ProductSchema);
